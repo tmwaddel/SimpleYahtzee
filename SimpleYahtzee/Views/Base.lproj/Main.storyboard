@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NzE-4f-VcO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SimpleYahtzee" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-8F-3xU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-Gz-Ayk">
+                                <rect key="frame" x="0.0" y="726" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Play Single Yahtzee">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSingleYahtzee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="56O-Z7-xBZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGd-bA-I7J">
+                                <rect key="frame" x="0.0" y="806" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Play Triple Yahtzee">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playTripleYahtzee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PVi-Pj-oLD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DGd-bA-I7J" firstAttribute="top" secondItem="d2F-Gz-Ayk" secondAttribute="bottom" constant="20" id="0EA-Qw-xM4"/>
+                            <constraint firstItem="d2F-Gz-Ayk" firstAttribute="top" secondItem="A4p-8F-3xU" secondAttribute="bottom" constant="20" id="2Bg-Ds-cQN"/>
+                            <constraint firstItem="d2F-Gz-Ayk" firstAttribute="top" secondItem="A4p-8F-3xU" secondAttribute="bottom" constant="20" id="60j-gt-IL3"/>
+                            <constraint firstItem="A4p-8F-3xU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lna-F1-dQb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGd-bA-I7J" secondAttribute="trailing" id="QVc-LS-4Z7"/>
+                            <constraint firstItem="A4p-8F-3xU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qyp-lS-8ov"/>
+                            <constraint firstItem="d2F-Gz-Ayk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZsM-v8-eiV"/>
+                            <constraint firstItem="DGd-bA-I7J" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-30" id="a1E-jo-PPj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d2F-Gz-Ayk" secondAttribute="trailing" id="f7x-LF-i9a"/>
+                            <constraint firstItem="A4p-8F-3xU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ht0-65-VLr"/>
+                            <constraint firstItem="DGd-bA-I7J" firstAttribute="top" secondItem="d2F-Gz-Ayk" secondAttribute="bottom" constant="20" id="ooB-jO-CuX"/>
+                            <constraint firstItem="DGd-bA-I7J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x1l-ue-crb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JV9-5b-aQx"/>
+                    <connections>
+                        <segue destination="iWn-6t-IqY" kind="show" identifier="singleGameSegue" id="XTh-4o-slw"/>
+                        <segue destination="gt5-Uf-9gC" kind="show" identifier="tripleGameSegue" id="a07-xI-dg8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--SingleGameViewController-->
+        <scene sceneID="1m4-7O-ubc">
+            <objects>
+                <viewController title="SingleGameViewController" id="iWn-6t-IqY" customClass="SingleGameViewController" customModule="SimpleYahtzee" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xI0-zZ-EXF" userLabel="Single Game View Controller">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3Dj-Ku-z92" userLabel="Row1ScoreStack">
+                                <rect key="frame" x="20" y="93" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKk-4F-OmT" userLabel="Ones: 0">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Ones: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="hhk-h1-mlw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2x-dL-KtA" userLabel="3 of a Kind: 0">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="3 of a Kind: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="fim-58-I3Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x1l-Yv-OKi" userLabel="Row2ScoreStack">
+                                <rect key="frame" x="20" y="140" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMN-RC-pmR">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Twos: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="u9G-qx-mWF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-w8-bX6">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="4 of a Kind: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="EqW-Jr-KaD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="D2Q-ZV-a0G" userLabel="Row3ScoreStack">
+                                <rect key="frame" x="20" y="187" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-Ms-b4w">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Threes: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="mUV-3s-4DW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNd-H2-Wrm">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Full House: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="Cp0-WW-GM5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-EX-MbF" userLabel="Row4ScoreStack">
+                                <rect key="frame" x="20" y="234" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gik-da-cgf">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Fours: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="PXs-FK-goh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-bn-F9X">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Small Straight: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="nKD-5Y-YiJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oKa-VM-qit" userLabel="Row5ScoreStack">
+                                <rect key="frame" x="20" y="281" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lb-lo-BSm">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Fives: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="fHO-AC-QzW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zq-7k-vuX">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Large Straight: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="KM4-9f-GCB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Idf-HG-mHO" userLabel="Row6ScoreStack">
+                                <rect key="frame" x="20" y="328" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-QC-tHb">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Sixes: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="Fgq-8o-fdG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51m-qe-xKH">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="42"/>
+                                        <color key="backgroundColor" name="UnScoredBGColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Yahtzee: 0">
+                                            <color key="titleColor" name="ScoreLabelTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="FYC-If-DF3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hce-dU-yZA">
+                                <rect key="frame" x="20" y="375" width="374" height="42"/>
+                                <color key="backgroundColor" name="UnScoredBGColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Chance: 0">
+                                    <color key="titleColor" name="ScoreLabelTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="setScore:" destination="iWn-6t-IqY" eventType="touchUpInside" id="Vre-l7-Bwb"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lvP-y2-oi2" userLabel="BonusScoresStack">
+                                <rect key="frame" x="20" y="651" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Bonus: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca5-20-jrO">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzee Bonus: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4u-at-6qJ">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Iz-w2-J2J" userLabel="TotalScoresStack">
+                                <rect key="frame" x="20" y="676.5" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yh-aB-pqV">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlF-MD-RpD">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ol-sy-GIV">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8d7-bh-lNU" userLabel="DiceStack">
+                                <rect key="frame" x="20" y="705" width="374" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDY-hQ-ycF">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YDY-hQ-ycF" secondAttribute="height" multiplier="1:1" id="gad-5i-hGp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="EmptyDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="iWn-6t-IqY" eventType="touchUpInside" id="hSa-EA-kBG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-Do-L2u">
+                                        <rect key="frame" x="77" y="0.0" width="66.5" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FIN-Do-L2u" secondAttribute="height" multiplier="1:1" id="VpY-uO-vUU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="EmptyDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="iWn-6t-IqY" eventType="touchUpInside" id="uEb-2g-Nhi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJo-Xt-7wL">
+                                        <rect key="frame" x="153.5" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RJo-Xt-7wL" secondAttribute="height" multiplier="1:1" id="LqN-si-RKi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="EmptyDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="iWn-6t-IqY" eventType="touchUpInside" id="v5j-Jg-2cu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-PY-n6Y">
+                                        <rect key="frame" x="230.5" y="0.0" width="66.5" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9QN-PY-n6Y" secondAttribute="height" multiplier="1:1" id="ThU-AS-LIs"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="EmptyDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="iWn-6t-IqY" eventType="touchUpInside" id="hxo-DS-Ltd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvc-wL-ijk">
+                                        <rect key="frame" x="307" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hvc-wL-ijk" secondAttribute="height" multiplier="1:1" id="0HD-ol-PbJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="EmptyDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="iWn-6t-IqY" eventType="touchUpInside" id="XIY-fw-zx3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvu-c7-1e2">
+                                <rect key="frame" x="20" y="780" width="374" height="72"/>
+                                <color key="backgroundColor" name="RollButtonBGColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Roll!">
+                                    <color key="titleColor" name="ScoreLabelTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="rollDice:" destination="iWn-6t-IqY" eventType="touchUpInside" id="2pC-r1-15q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oKa-VM-qit" firstAttribute="top" secondItem="bnZ-EX-MbF" secondAttribute="bottom" constant="5" id="0D2-CO-Uj6"/>
+                            <constraint firstItem="8d7-bh-lNU" firstAttribute="top" secondItem="5Iz-w2-J2J" secondAttribute="bottom" constant="8" id="0V4-3Q-gcL"/>
+                            <constraint firstItem="x1l-Yv-OKi" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="Abh-IV-A8q"/>
+                            <constraint firstItem="Idf-HG-mHO" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="Cat-g5-QEq"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="oKa-VM-qit" secondAttribute="trailing" constant="20" id="EjE-Eb-TVb"/>
+                            <constraint firstItem="hvu-c7-1e2" firstAttribute="bottom" secondItem="euA-BF-L8Z" secondAttribute="bottom" constant="-10" id="GnY-0f-mGa"/>
+                            <constraint firstAttribute="trailing" secondItem="x1l-Yv-OKi" secondAttribute="trailing" constant="20" id="Jk1-j1-gUI"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="hvu-c7-1e2" secondAttribute="trailing" constant="20" id="KdT-AI-rBf"/>
+                            <constraint firstItem="3Dj-Ku-z92" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="LEm-bZ-F00"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="hce-dU-yZA" secondAttribute="trailing" constant="20" id="PQU-3O-Pbj"/>
+                            <constraint firstItem="hvu-c7-1e2" firstAttribute="top" secondItem="8d7-bh-lNU" secondAttribute="bottom" constant="8" id="QJm-wA-pbZ"/>
+                            <constraint firstItem="hce-dU-yZA" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="QaW-T4-IBS"/>
+                            <constraint firstItem="lvP-y2-oi2" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="R8u-df-jIu"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="5Iz-w2-J2J" secondAttribute="trailing" constant="20" id="Ue1-5R-cLt"/>
+                            <constraint firstItem="D2Q-ZV-a0G" firstAttribute="top" secondItem="x1l-Yv-OKi" secondAttribute="bottom" constant="5" id="V1c-19-lSi"/>
+                            <constraint firstItem="Idf-HG-mHO" firstAttribute="top" secondItem="oKa-VM-qit" secondAttribute="bottom" constant="5" id="VFc-JV-d1N"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="3Dj-Ku-z92" secondAttribute="trailing" constant="20" id="VHm-Bo-YeR"/>
+                            <constraint firstItem="bnZ-EX-MbF" firstAttribute="top" secondItem="D2Q-ZV-a0G" secondAttribute="bottom" constant="5" id="VIh-f6-nIh"/>
+                            <constraint firstItem="x1l-Yv-OKi" firstAttribute="top" secondItem="3Dj-Ku-z92" secondAttribute="bottom" constant="5" id="VXa-jx-w2V"/>
+                            <constraint firstAttribute="trailing" secondItem="8d7-bh-lNU" secondAttribute="trailing" constant="20" id="Zvb-m3-ycw"/>
+                            <constraint firstItem="hvu-c7-1e2" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="afE-eA-PmI"/>
+                            <constraint firstItem="8d7-bh-lNU" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="di5-Vf-BGe"/>
+                            <constraint firstItem="oKa-VM-qit" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="fGc-1N-dH3"/>
+                            <constraint firstItem="5Iz-w2-J2J" firstAttribute="top" secondItem="lvP-y2-oi2" secondAttribute="bottom" constant="5" id="iEA-IA-OXN"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="lvP-y2-oi2" secondAttribute="trailing" constant="20" id="iaP-eg-EXg"/>
+                            <constraint firstItem="5Iz-w2-J2J" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="l3W-eD-LyV"/>
+                            <constraint firstItem="3Dj-Ku-z92" firstAttribute="top" secondItem="euA-BF-L8Z" secondAttribute="top" constant="5" id="o2T-dZ-T3p"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="Idf-HG-mHO" secondAttribute="trailing" constant="20" id="qRV-6D-t0A"/>
+                            <constraint firstItem="hce-dU-yZA" firstAttribute="top" secondItem="Idf-HG-mHO" secondAttribute="bottom" constant="5" id="tMB-IL-9YK"/>
+                            <constraint firstItem="bnZ-EX-MbF" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="twa-yJ-rBl"/>
+                            <constraint firstItem="D2Q-ZV-a0G" firstAttribute="leading" secondItem="euA-BF-L8Z" secondAttribute="leading" constant="20" id="vxq-a6-AhN"/>
+                            <constraint firstItem="euA-BF-L8Z" firstAttribute="trailing" secondItem="bnZ-EX-MbF" secondAttribute="trailing" constant="20" id="xad-Py-eCQ"/>
+                            <constraint firstAttribute="trailing" secondItem="D2Q-ZV-a0G" secondAttribute="trailing" constant="20" id="zmK-pv-oYj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="euA-BF-L8Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aeX-H8-RKw"/>
+                    <connections>
+                        <outlet property="bottomTotalLabel" destination="ZlF-MD-RpD" id="EhH-k1-Ql1"/>
+                        <outlet property="chanceScore" destination="hce-dU-yZA" id="4L2-f1-H2K"/>
+                        <outlet property="dice1" destination="YDY-hQ-ycF" id="uvu-n7-Mw6"/>
+                        <outlet property="dice2" destination="FIN-Do-L2u" id="He2-fT-aZe"/>
+                        <outlet property="dice3" destination="RJo-Xt-7wL" id="ALD-KR-jW9"/>
+                        <outlet property="dice4" destination="9QN-PY-n6Y" id="gKQ-nK-sep"/>
+                        <outlet property="dice5" destination="hvc-wL-ijk" id="B9a-Xp-aiG"/>
+                        <outlet property="fivesScore" destination="1Lb-lo-BSm" id="LTw-m3-AgQ"/>
+                        <outlet property="fourKindScore" destination="hHv-w8-bX6" id="Hv6-tO-G5G"/>
+                        <outlet property="foursScore" destination="gik-da-cgf" id="Ggk-UL-sa1"/>
+                        <outlet property="fullHouseScore" destination="SNd-H2-Wrm" id="doH-Ab-WLH"/>
+                        <outlet property="gameTotalLabel" destination="5Ol-sy-GIV" id="w4M-7S-EWg"/>
+                        <outlet property="lgStrScore" destination="2zq-7k-vuX" id="rGP-3K-Get"/>
+                        <outlet property="onesScore" destination="MKk-4F-OmT" id="Skf-oi-eGZ"/>
+                        <outlet property="rollButtonItem" destination="hvu-c7-1e2" id="U1L-ht-3p0"/>
+                        <outlet property="sixesScore" destination="KOR-QC-tHb" id="FOZ-iO-6Ne"/>
+                        <outlet property="smStrScore" destination="WJq-bn-F9X" id="dcJ-F2-a5n"/>
+                        <outlet property="threeKindScore" destination="b2x-dL-KtA" id="1fu-Hb-kzk"/>
+                        <outlet property="threesScore" destination="yzX-Ms-b4w" id="Q9A-TP-6qJ"/>
+                        <outlet property="topBonusLabel" destination="ca5-20-jrO" id="usC-Ol-CYq"/>
+                        <outlet property="topTotalLabel" destination="5Yh-aB-pqV" id="MoM-e4-q4e"/>
+                        <outlet property="twosScore" destination="fMN-RC-pmR" id="uCK-oL-1Rj"/>
+                        <outlet property="yahtzeeBonusLabel" destination="T4u-at-6qJ" id="fHA-vP-xzA"/>
+                        <outlet property="yahtzeeScore" destination="51m-qe-xKH" id="WvF-wK-QZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1g-Q2-bh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2171.0144927536235" y="-116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A0x-Qf-ttM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NzE-4f-VcO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LE0-vY-tXm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Dh2-mk-q4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="msq-VA-e0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Triple Game View Controller-->
+        <scene sceneID="b4s-cE-eiA">
+            <objects>
+                <viewController id="gt5-Uf-9gC" customClass="TripleGameViewController" customModule="SimpleYahtzee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBx-0O-JVl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pmf-4H-CyI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="555"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <sections/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-9k-2BI" userLabel="TotalScoresStack">
+                                <rect key="frame" x="20" y="676.5" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVA-vl-Ihj">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TQ-av-NNX">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSX-Ij-YPM">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XzL-Sr-ATM" userLabel="DiceStack">
+                                <rect key="frame" x="20" y="705" width="374" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-Lc-QIF">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HVc-Lc-QIF" secondAttribute="height" multiplier="1:1" id="l0j-k1-9SK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OneDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="xDM-Jv-dRi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJN-4D-QpD">
+                                        <rect key="frame" x="77" y="0.0" width="66.5" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IJN-4D-QpD" secondAttribute="height" multiplier="1:1" id="ZVD-OV-l37"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OneDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="eOi-hz-zsv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P03-tc-8wA">
+                                        <rect key="frame" x="153.5" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="P03-tc-8wA" secondAttribute="height" multiplier="1:1" id="SGI-o8-cWi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OneDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="yli-vf-mYF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tg-Lr-6Xo">
+                                        <rect key="frame" x="230.5" y="0.0" width="66.5" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6tg-Lr-6Xo" secondAttribute="height" multiplier="1:1" id="3xg-np-GWc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OneDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="K3M-w7-amu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAP-kY-uY9">
+                                        <rect key="frame" x="307" y="0.0" width="67" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WAP-kY-uY9" secondAttribute="height" multiplier="1:1" id="g1f-kx-oDk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="OneDice"/>
+                                        <connections>
+                                            <action selector="diceHold:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="RyO-Xv-MlY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86g-Cb-FWt">
+                                <rect key="frame" x="20" y="780" width="374" height="72"/>
+                                <color key="backgroundColor" red="0.64742857220000005" green="0.11853265020000001" blue="0.1335859895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Roll!">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="rollDice:" destination="gt5-Uf-9gC" eventType="touchUpInside" id="51S-Lx-Pja"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2X6-vh-Ea9" userLabel="BonusScoresStack">
+                                <rect key="frame" x="20" y="651" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Bonus: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utD-1n-fw1">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzee Bonus: 1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-dl-qXr">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LEq-SV-DW9" firstAttribute="trailing" secondItem="QvY-9k-2BI" secondAttribute="trailing" constant="20" id="2dA-aY-dSe"/>
+                            <constraint firstItem="86g-Cb-FWt" firstAttribute="top" secondItem="XzL-Sr-ATM" secondAttribute="bottom" constant="8" id="4gA-AJ-84b"/>
+                            <constraint firstAttribute="trailing" secondItem="XzL-Sr-ATM" secondAttribute="trailing" constant="20" id="M96-64-Hmi"/>
+                            <constraint firstItem="XzL-Sr-ATM" firstAttribute="top" secondItem="QvY-9k-2BI" secondAttribute="bottom" constant="8" id="P3q-1E-eiO"/>
+                            <constraint firstItem="86g-Cb-FWt" firstAttribute="leading" secondItem="LEq-SV-DW9" secondAttribute="leading" constant="20" id="R9v-fJ-QLL"/>
+                            <constraint firstItem="2X6-vh-Ea9" firstAttribute="top" secondItem="Pmf-4H-CyI" secondAttribute="bottom" constant="8" id="WKQ-V5-EpB"/>
+                            <constraint firstItem="86g-Cb-FWt" firstAttribute="bottom" secondItem="LEq-SV-DW9" secondAttribute="bottom" constant="-10" id="WVf-RZ-UBn"/>
+                            <constraint firstItem="Pmf-4H-CyI" firstAttribute="trailing" secondItem="LEq-SV-DW9" secondAttribute="trailing" id="WWL-V7-Xb3"/>
+                            <constraint firstItem="LEq-SV-DW9" firstAttribute="trailing" secondItem="86g-Cb-FWt" secondAttribute="trailing" constant="20" id="X0z-Fw-Wqk"/>
+                            <constraint firstItem="QvY-9k-2BI" firstAttribute="leading" secondItem="LEq-SV-DW9" secondAttribute="leading" constant="20" id="XOr-qJ-qbL"/>
+                            <constraint firstItem="LEq-SV-DW9" firstAttribute="trailing" secondItem="2X6-vh-Ea9" secondAttribute="trailing" constant="20" id="ZHg-xR-lKy"/>
+                            <constraint firstItem="2X6-vh-Ea9" firstAttribute="leading" secondItem="LEq-SV-DW9" secondAttribute="leading" constant="20" id="a2s-jq-YNp"/>
+                            <constraint firstItem="Pmf-4H-CyI" firstAttribute="top" secondItem="LEq-SV-DW9" secondAttribute="top" id="dRi-Gj-EVj"/>
+                            <constraint firstItem="Pmf-4H-CyI" firstAttribute="leading" secondItem="LEq-SV-DW9" secondAttribute="leading" id="ddb-Vd-af0"/>
+                            <constraint firstItem="QvY-9k-2BI" firstAttribute="top" secondItem="2X6-vh-Ea9" secondAttribute="bottom" constant="5" id="q9C-pN-0nC"/>
+                            <constraint firstItem="XzL-Sr-ATM" firstAttribute="leading" secondItem="LEq-SV-DW9" secondAttribute="leading" constant="20" id="qlT-Ul-WHx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LEq-SV-DW9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xlg-Q8-LRd"/>
+                    <connections>
+                        <outlet property="dice1" destination="HVc-Lc-QIF" id="4qT-Nh-Wns"/>
+                        <outlet property="dice2" destination="IJN-4D-QpD" id="6HQ-Sh-61Q"/>
+                        <outlet property="dice3" destination="P03-tc-8wA" id="YFW-NC-BSA"/>
+                        <outlet property="dice4" destination="6tg-Lr-6Xo" id="DZD-xr-G59"/>
+                        <outlet property="dice5" destination="WAP-kY-uY9" id="qRS-in-cd0"/>
+                        <outlet property="gameTableView" destination="Pmf-4H-CyI" id="uoR-YL-gq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrX-4b-nsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2171" y="613"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EmptyDice" width="225" height="225"/>
+        <image name="OneDice" width="225" height="225"/>
+        <namedColor name="RollButtonBGColor">
+            <color red="0.68235294117647061" green="0.11764705882352941" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ScoreLabelTextColor">
+            <color red="0.0" green="0.0" blue="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UnScoredBGColor">
+            <color red="0.55699998140335083" green="0.55699998140335083" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
