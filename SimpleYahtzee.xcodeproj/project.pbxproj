@@ -19,6 +19,8 @@
 		471AE9AA246B5DE500B881BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471AE9A9246B5DE500B881BC /* Constants.swift */; };
 		47264E95246CEA9600E89DA4 /* DiceHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47264E94246CEA9600E89DA4 /* DiceHand.swift */; };
 		47264E99246D300000E89DA4 /* ScoreColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47264E98246D300000E89DA4 /* ScoreColumn.swift */; };
+		473292AA247251B10040DD04 /* TripleGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473292A8247251B10040DD04 /* TripleGameCell.swift */; };
+		473292AB247251B10040DD04 /* TripleGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473292A9247251B10040DD04 /* TripleGameCell.xib */; };
 		479954602470CEA700220A88 /* TripleGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799545F2470CEA700220A88 /* TripleGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		471AE9A9246B5DE500B881BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47264E94246CEA9600E89DA4 /* DiceHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceHand.swift; sourceTree = "<group>"; };
 		47264E98246D300000E89DA4 /* ScoreColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreColumn.swift; sourceTree = "<group>"; };
+		473292A8247251B10040DD04 /* TripleGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleGameCell.swift; sourceTree = "<group>"; };
+		473292A9247251B10040DD04 /* TripleGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripleGameCell.xib; sourceTree = "<group>"; };
 		4799545F2470CEA700220A88 /* TripleGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 				471AE995246B450500B881BC /* SingleGameViewController.swift */,
 				4799545F2470CEA700220A88 /* TripleGameViewController.swift */,
 				471AE987246B441100B881BC /* Main.storyboard */,
+				473292A8247251B10040DD04 /* TripleGameCell.swift */,
+				473292A9247251B10040DD04 /* TripleGameCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				471AE98E246B442300B881BC /* LaunchScreen.storyboard in Resources */,
+				473292AB247251B10040DD04 /* TripleGameCell.xib in Resources */,
 				471AE98B246B442300B881BC /* Assets.xcassets in Resources */,
 				471AE989246B441100B881BC /* Main.storyboard in Resources */,
 			);
@@ -182,6 +189,7 @@
 				471AE9AA246B5DE500B881BC /* Constants.swift in Sources */,
 				471AE984246B441100B881BC /* SceneDelegate.swift in Sources */,
 				479954602470CEA700220A88 /* TripleGameViewController.swift in Sources */,
+				473292AA247251B10040DD04 /* TripleGameCell.swift in Sources */,
 				471AE9A1246B589A00B881BC /* TripleYahtzeeGameBrain.swift in Sources */,
 				47264E99246D300000E89DA4 /* ScoreColumn.swift in Sources */,
 				471AE99F246B588700B881BC /* SingleYahtzeeGameBrain.swift in Sources */,

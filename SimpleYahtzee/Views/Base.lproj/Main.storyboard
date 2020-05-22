@@ -78,6 +78,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cHm-gZ-C3P">
+                                <rect key="frame" x="0.0" y="88" width="414" height="555"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="WKa-ga-r4i" userLabel="BonusStackView">
                                 <rect key="frame" x="20" y="651" width="374" height="20.5"/>
                                 <subviews>
@@ -165,10 +169,15 @@
                                 <state key="normal" title="Roll!">
                                     <color key="titleColor" name="ScoreLabelTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonPressed:" destination="VTW-LU-9ps" eventType="touchUpInside" id="Xju-q1-QSF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cHm-gZ-C3P" firstAttribute="top" secondItem="qU8-pw-U7v" secondAttribute="top" id="0sl-5b-MfR"/>
+                            <constraint firstItem="WKa-ga-r4i" firstAttribute="top" secondItem="cHm-gZ-C3P" secondAttribute="bottom" constant="8" id="3ME-o6-Fds"/>
                             <constraint firstItem="XhH-WZ-bSg" firstAttribute="top" secondItem="Jts-wU-6H2" secondAttribute="bottom" constant="8" id="4Xb-VX-5KB"/>
                             <constraint firstItem="qU8-pw-U7v" firstAttribute="trailing" secondItem="WKa-ga-r4i" secondAttribute="trailing" constant="20" id="9mb-Br-zBb"/>
                             <constraint firstItem="g2U-rc-dl4" firstAttribute="top" secondItem="XhH-WZ-bSg" secondAttribute="bottom" constant="8" id="AQ9-GD-nx4"/>
@@ -178,14 +187,24 @@
                             <constraint firstItem="qU8-pw-U7v" firstAttribute="trailing" secondItem="Jts-wU-6H2" secondAttribute="trailing" constant="20" id="LrJ-Zb-v5I"/>
                             <constraint firstItem="Jts-wU-6H2" firstAttribute="leading" secondItem="qU8-pw-U7v" secondAttribute="leading" constant="20" id="OOJ-rc-iY4"/>
                             <constraint firstAttribute="trailing" secondItem="XhH-WZ-bSg" secondAttribute="trailing" constant="20" id="TWp-OM-gUi"/>
+                            <constraint firstItem="qU8-pw-U7v" firstAttribute="trailing" secondItem="cHm-gZ-C3P" secondAttribute="trailing" id="afM-CS-BGf"/>
                             <constraint firstItem="Jts-wU-6H2" firstAttribute="top" secondItem="WKa-ga-r4i" secondAttribute="bottom" constant="5" id="dGs-44-mUD"/>
                             <constraint firstItem="WKa-ga-r4i" firstAttribute="leading" secondItem="qU8-pw-U7v" secondAttribute="leading" constant="20" id="kJl-Ey-2BU"/>
                             <constraint firstItem="XhH-WZ-bSg" firstAttribute="leading" secondItem="j7h-PE-y5u" secondAttribute="leading" constant="20" id="psh-km-yh7"/>
                             <constraint firstItem="qU8-pw-U7v" firstAttribute="trailing" secondItem="g2U-rc-dl4" secondAttribute="trailing" constant="20" id="wcu-Zy-D5w"/>
+                            <constraint firstItem="cHm-gZ-C3P" firstAttribute="leading" secondItem="qU8-pw-U7v" secondAttribute="leading" id="xgw-bz-Hhe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qU8-pw-U7v"/>
                     </view>
                     <navigationItem key="navigationItem" id="XbA-d7-Dnc"/>
+                    <connections>
+                        <outlet property="dice1Button" destination="Cuw-xh-jxa" id="LEM-A3-zhH"/>
+                        <outlet property="dice2Button" destination="KAD-Wn-Bga" id="TW6-nU-P2k"/>
+                        <outlet property="dice3Button" destination="Gh3-qJ-mHW" id="76d-4j-AG2"/>
+                        <outlet property="dice4Button" destination="egJ-s9-bxs" id="fNF-tE-DaQ"/>
+                        <outlet property="dice5Button" destination="4q2-cM-Ks3" id="nbe-5A-Tcf"/>
+                        <outlet property="scoresTableView" destination="cHm-gZ-C3P" id="7r9-Iy-ERf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e07-go-zfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

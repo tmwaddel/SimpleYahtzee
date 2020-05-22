@@ -10,6 +10,7 @@ import UIKit
 
 class SingleGameViewController: UIViewController {
     var singleGame: SingleYahtzeeGameBrain?
+    var yhtzBonusFlag: Bool = false
     
     // Dictionary for converting UIButton tag to a string
     let scoreButtons: [Int : String] = [
@@ -63,27 +64,27 @@ class SingleGameViewController: UIViewController {
         super.viewDidLoad()
         
         // Give each of the pressable features a nice rounded corner
-        onesScore.layer.cornerRadius = buttonCornerRadius;
-        twosScore.layer.cornerRadius = buttonCornerRadius;
-        threesScore.layer.cornerRadius = buttonCornerRadius;
-        foursScore.layer.cornerRadius = buttonCornerRadius;
-        fivesScore.layer.cornerRadius = buttonCornerRadius;
-        sixesScore.layer.cornerRadius = buttonCornerRadius;
-        threeKindScore.layer.cornerRadius = buttonCornerRadius;
-        fourKindScore.layer.cornerRadius = buttonCornerRadius;
-        fullHouseScore.layer.cornerRadius = buttonCornerRadius;
-        smStrScore.layer.cornerRadius = buttonCornerRadius;
-        lgStrScore.layer.cornerRadius = buttonCornerRadius;
-        yahtzeeScore.layer.cornerRadius = buttonCornerRadius;
-        chanceScore.layer.cornerRadius = buttonCornerRadius;
+        onesScore.layer.cornerRadius = buttonCornerRadius
+        twosScore.layer.cornerRadius = buttonCornerRadius
+        threesScore.layer.cornerRadius = buttonCornerRadius
+        foursScore.layer.cornerRadius = buttonCornerRadius
+        fivesScore.layer.cornerRadius = buttonCornerRadius
+        sixesScore.layer.cornerRadius = buttonCornerRadius
+        threeKindScore.layer.cornerRadius = buttonCornerRadius
+        fourKindScore.layer.cornerRadius = buttonCornerRadius
+        fullHouseScore.layer.cornerRadius = buttonCornerRadius
+        smStrScore.layer.cornerRadius = buttonCornerRadius
+        lgStrScore.layer.cornerRadius = buttonCornerRadius
+        yahtzeeScore.layer.cornerRadius = buttonCornerRadius
+        chanceScore.layer.cornerRadius = buttonCornerRadius
         
-        dice1.layer.cornerRadius = buttonCornerRadius;
-        dice2.layer.cornerRadius = buttonCornerRadius;
-        dice3.layer.cornerRadius = buttonCornerRadius;
-        dice4.layer.cornerRadius = buttonCornerRadius;
-        dice5.layer.cornerRadius = buttonCornerRadius;
+        dice1.layer.cornerRadius = buttonCornerRadius
+        dice2.layer.cornerRadius = buttonCornerRadius
+        dice3.layer.cornerRadius = buttonCornerRadius
+        dice4.layer.cornerRadius = buttonCornerRadius
+        dice5.layer.cornerRadius = buttonCornerRadius
         
-        rollButtonItem.layer.cornerRadius = buttonCornerRadius;
+        rollButtonItem.layer.cornerRadius = buttonCornerRadius
         
         // Change the back button to say "Quit" instead
         let backButton = UIBarButtonItem()
@@ -138,6 +139,19 @@ class SingleGameViewController: UIViewController {
     func checkYahtzeeBonus() {
         if (singleGame?.yahtzeeBonus())! {
             print("Yahtzee Bonus Found")
+            yhtzBonusFlag = true
+            
+            rollButtonItem.isEnabled = false
+            
+            updateScores()
+            
+            if smStrScore.isEnabled {
+                smStrScore.setTitle("\(K.smstr): 30", for: .normal)
+            }
+            
+            if lgStrScore.isEnabled {
+                lgStrScore.setTitle("\(K.lgstr): 40", for: .normal)
+            }
         }
     }
 
@@ -174,8 +188,10 @@ class SingleGameViewController: UIViewController {
     @IBAction func setScore(_ sender: UIButton) {
         // If the turn has started, allow the user to set the score
         if (singleGame?.isHandRolled())! {
-            // Set the score within the singleGame struct
-            singleGame?.setScore(forRow: scoreButtons[sender.tag]!)
+            // Set the score within the singleGame struct            
+            singleGame?.setScore(forRow: scoreButtons[sender.tag]!, yhtzBonus: yhtzBonusFlag)
+            yhtzBonusFlag = false
+            
             updateScores()
             
             // Format score buttons to indicate it's been used
@@ -187,6 +203,8 @@ class SingleGameViewController: UIViewController {
             // If the game is over, deactivate and change the roll button title
             // If the game is still in progress, enable the roll button and update the scores/dice
             if (singleGame?.gameOver())! {
+                promptForWinnerName()
+                
                 rollButtonItem.isEnabled = false
                 rollButtonItem.setTitle("Game Over!", for: .disabled)
             } else {
@@ -196,5 +214,21 @@ class SingleGameViewController: UIViewController {
                 updateScores()
             }
         }
+    }
+    
+    func promptForWinnerName() {
+        // Get the user's name at the end of a game if a high score is achieved.
+        let ac = UIAlertController(title: "High Score!", message: "Enter your name for the Hall of Fame.", preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0]
+            // do something interesting with "answer" here
+            print("\(answer.text ?? ""), \(self.singleGame?.getFinalScore() ?? 0)")
+        }
+
+        ac.addAction(submitAction)
+
+        present(ac, animated: true)
     }
 }

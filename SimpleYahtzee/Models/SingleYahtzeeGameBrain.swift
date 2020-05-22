@@ -13,7 +13,9 @@ struct SingleYahtzeeGameBrain {
     private var scoreCol: ScoreColumn
     
     private var roundNumber: Int
+    private var roundsMax: Int = 14
     private var turnNumber: Int
+    private var turnsMax: Int = 3
     private var rolled: Bool
     
     private var heldColor: UIColor = UIColor(named: "HoldBackgroundColor")!
@@ -68,7 +70,7 @@ struct SingleYahtzeeGameBrain {
     func roundOver() -> Bool {
         // Check if the round has ended.
         //if turnNumber >= 3 {
-        if turnNumber >= 20 {
+        if turnNumber >= turnsMax {
             return true
         } else {
             return false
@@ -78,7 +80,7 @@ struct SingleYahtzeeGameBrain {
     
     func gameOver() -> Bool {
         // Check if the game has ended (13 turns)
-        if roundNumber >= 14 {
+        if roundNumber >= roundsMax {
             return true
         } else {
             return false
@@ -109,17 +111,27 @@ struct SingleYahtzeeGameBrain {
         return diceImages[self.diceHand.getDice(diceNum: n)]
     }
     
-    func yahtzeeBonus() -> Bool {
+    mutating func yahtzeeBonus() -> Bool {
         // Checking to see if a yahtzee has been rolled for yahtzee bonus calculation
         //  If a yahtzee has been scored previously and a yahtzee has been rolled, return true.
         let yhtScore: Bool = scoreCol.yahtzee.getUsed()
+        let yhtPoints: Int = scoreCol.yahtzee.getPoints()
         let yhtRolled: Bool = diceHand.yahtzeeCheck()
         
-        return yhtScore && yhtRolled
+        if yhtScore && yhtRolled && (yhtPoints == 50) {
+            // Ends the turn and increases the Yahtzee Bonus field
+            // turnNumber = 3
+            turnNumber = turnsMax
+            scoreCol.setYahtzeeBonus()
+            
+            return true
+        } else {
+            return false
+        }
     }
     
     
-    mutating func setScore(forRow: String) {
+    mutating func setScore(forRow: String, yhtzBonus: Bool) {
         // Set the score based on the button tapped.
         switch forRow {
         case K.one:
@@ -160,11 +172,19 @@ struct SingleYahtzeeGameBrain {
             }
         case K.smstr:
             if !scoreCol.smStr.getUsed() {
-                _ = scoreCol.smStr.setPoints(score: diceHand.getSmStr())
+                if yhtzBonus {
+                    _ = scoreCol.smStr.setPoints(score: 30)
+                } else {
+                    _ = scoreCol.smStr.setPoints(score: diceHand.getSmStr())
+                }
             }
         case K.lgstr:
             if !scoreCol.lgStr.getUsed() {
-                _ = scoreCol.lgStr.setPoints(score: diceHand.getLgStr())
+                if yhtzBonus {
+                    _ = scoreCol.lgStr.setPoints(score: 40)
+                } else {
+                    _ = scoreCol.lgStr.setPoints(score: diceHand.getLgStr())
+                }
             }
         case K.ytz:
             if !scoreCol.yahtzee.getUsed() {
@@ -235,5 +255,9 @@ struct SingleYahtzeeGameBrain {
         default:
             return ""
         }
+    }
+    
+    mutating func getFinalScore() -> Int {
+        return scoreCol.getGameTotal()
     }
 }

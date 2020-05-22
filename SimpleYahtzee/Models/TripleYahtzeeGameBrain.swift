@@ -9,37 +9,14 @@
 import Foundation
 
 struct TripleYahtzeeGameBrain {
-//    var diceHand: [SingleDie] = [
-//        SingleDie(),
-//        SingleDie(),
-//        SingleDie(),
-//        SingleDie(),
-//        SingleDie()
-//    ]
-//
-//    var scoreSheet = ScoreSheet()
-//
-//    mutating func rollDice() {
-//        for i in 0..<diceHand.count {
-//            diceHand[i].rollDie()
-//        }
-//    }
-//
-//    func getDice() -> [SingleDie] {
-//        return diceHand
-//    }
-//
-//    func getTopScores(n: Int) -> Int {
-//        var outputValue: Int = 0
-//
-//        for i in diceHand {
-//            let temp = i.value
-//
-//            if temp == n {
-//                outputValue += temp
-//            }
-//        }
-//
-//        return outputValue
-//    }
+    var turnNumber: Int
+    var roundNumber: Int
+    
+    var maxTurns: Int = 3
+    var maxRounds: Int = 20
+    
+    init() {
+        turnNumber = 0
+        roundNumber = 0
+    }
 }

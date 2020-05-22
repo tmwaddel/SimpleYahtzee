@@ -79,7 +79,7 @@ struct DiceHand {
         // Checks for a full house, 1 pair and 1 triple (25 pts)
         let counts: [Int] = getDiceCounts()
         
-        return (counts.contains(2) && counts.contains(3)) ? 25 : 0
+        return (counts.contains(2) && counts.contains(3) || counts.contains(5)) ? 25 : 0
     }
     
     
